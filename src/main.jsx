@@ -5,7 +5,7 @@ import './index.css'
 import './bootstrap.min.css'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import cartStore from './Redux/slices/CartStore.js'
+import cartStore from './Redux/slices/cartStore.js'
 
 
 
