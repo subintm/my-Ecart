@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { addToWishlist } from '../Redux/slices/wishlistSlice'
 import Header from '../components/Header'
+import { addtoCart } from '../Redux/slices/cartSlice'
 
 
 
@@ -49,8 +50,7 @@ const dispatch =useDispatch()
           <p style={{ textAlign: 'justify' }}><span className='fw-bolder'>Description: </span>{product?.description}</p>
           <div className='d-flex justify-content-between mt-5'>
             <Button  onClick={()=>handleWishlist(products)} variant="outline-dark" className='btn fs-5'><i className="fa-solid fa-heart text-danger"></i>Wish list</Button>
-            <Button  variant="outline-dark" className='btn fs-5'><i className="fa-solid fa-cart-plus text-success"></i>Cart</Button>
-
+            <Button   onClick={()=>addtoCart(products)} variant="outline-dark" className='btn fs-5'><i className="fa-solid fa-cart-plus text-success"></i>Cart</Button>
           </div>
         </div>
       </div>
