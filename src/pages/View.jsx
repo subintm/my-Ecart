@@ -40,17 +40,19 @@ const dispatch =useDispatch()
     
       <div className="row mt-5 align-items-center">
         <div className="col-md-4">
-          <img style={{ height: '250px', width: '250px' }} src={product?.thumbnail} alt="product" />
+          <img style={{ height: '250px', width: '250px',margin:'40px' }} src={product?.thumbnail} alt="product" />
         </div>
         <div className="col-md-2"></div>
         <div className="col-md-6">
-          <p>PID: {product?.id}</p>
-          <h1>{product?.title}</h1>
-          <h5 className='fw-bolder'>{product?.price}</h5>
-          <p style={{ textAlign: 'justify' }}><span className='fw-bolder'>Description: </span>{product?.description}</p>
-          <div className='d-flex justify-content-between mt-5'>
-            <Button  onClick={()=>handleWishlist(products)} variant="outline-dark" className='btn fs-5'><i className="fa-solid fa-heart text-danger"></i>Wish list</Button>
-            <Button   onClick={()=>addtoCart(products)} variant="outline-dark" className='btn fs-5'><i className="fa-solid fa-cart-plus text-success"></i>Cart</Button>
+          <p style={{fontSize:'15px'}}>P(ID): {product?.id}</p>
+          <h1 style={{fontSize:'25px'}}>{product?.title}</h1>
+          <h5  style={{fontSize:'17px'}}className='fw-bolder'>{product?.price}</h5>
+          <p style={{ textAlign: 'justify',fontSize:'13px' }}><span style={{fontSize:'1px'}} className='fw-bolder'>Description:</span >{product?.description}</p>
+          <div className='d-flex justify-content mt-5 '>
+            <Button  onClick={()=>handleWishlist(product)} variant="outline-dark" className='btn fs-5 me-2' 
+            style={{backgroundColor:'orange', border:'3', borderRadius:'5px'}}><i className="fa-solid fa-heart text-danger"></i> Add to Wishlist</Button>
+            <Button   onClick={()=> dispatch(addtoCart(product))}  variant="outline-dark" className='btn fs-5'
+             style={{backgroundColor:'red', border:'3', borderRadius:'5px'}}><i className="fa-solid fa-cart-plus text-success"></i>Cart</Button>
           </div>
         </div>
       </div>

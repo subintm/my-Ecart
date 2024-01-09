@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeFromWishlist } from '../Redux/slices/wishlistSlice'
 import Header from '../components/Header'
+import { addtoCart } from '../Redux/slices/cartSlice'
+
 
 function WishList() {
   const wishlist = useSelector(state=>state.wishlistSlice.wishlist)
@@ -20,7 +22,7 @@ function WishList() {
               <Card.Title>{product?.title}</Card.Title>
               <div className='d-flex justify-content-between'>
                 <Button onClick={()=>dispatch(removeFromWishlist(product.id))} className='btn btn-light fs-5'><i className="fa-solid fa-heart-circle-minus text-danger"></i></Button>
-                <Button className='btn btn-light fs-5'><i className="fa-solid fa-cart-plus text-success"></i></Button>
+                <Button onClick={()=> dispatch(addtoCart(product))} className='btn btn-light fs-5'><i className="fa-solid fa-cart-plus text-success"></i></Button>
               </div>
             </Card.Body>
           </Card>
